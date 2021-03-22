@@ -4,10 +4,10 @@ weather - API
 Building a website that presents the weather forecast for the coming week.
 
 
-html
+- html
 
-css
+- css
 
-javascript
+- javascript
 
-node.js
+- node.js
