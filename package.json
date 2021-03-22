@@ -1,0 +1,27 @@
+{
+  "name": "MVC-nodejs",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Maximilian",
+  "license": "ISC",
+  "devDependencies": {
+    "cookie-parser": "^1.4.5",
+    "cookies": "^0.8.0",
+    "express-session": "^1.17.1",
+    "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "sequelize": "^6.4.0",
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.1"
+  }
+}

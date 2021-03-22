@@ -1,0 +1,122 @@
+<%- include('includes/head.ejs') %>
+
+<link href="/css/weather.css" rel="stylesheet">
+<link href="/css/loading-anim.css" rel="stylesheet">
+<script src="/scripts/weather.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12 bg-light">
+            <div class="m-5 p-5">
+                <p> Hi <%= userData.firstName %> <%= userData.lastName %>!</p>
+                <a class="btn btn-primary btn-sm" href="/login" id="logout">Log out</a>
+
+                <h1 class="text-center">Weather Forecast</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6" id="menu-section">
+
+            <div class="row bg-light px-3 py-3 m-5" id="selection">
+                <div class="col col-12">
+                    <select class="custom-select" id="select_place">
+                        <option selected value="None">-- Select --</option>
+                    </select>
+                    <div class="d-none text-center" id="selection_buttons">
+                        <button class="btn btn-danger m-3" id="remove_btn">Remove</button>
+                        <button class="btn btn-success m-3" id="display_btn">Display Forecast</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row bg-light px-3 py-3 m-5" id="insert_section">
+                <div class="col text-left">
+                    <form>
+
+                        <div class="form-row">
+                            <div class="col-12" id="unique_alert">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-12 col-md-5">
+                                <label for="place">Place</label>
+                                <input class="form-control" id="place" required type="text">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="longitude">Lon</label>
+                                <input class="form-control" id="longitude" max="180"
+                                       min="-180" required step="0.000000001" type="number">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="latitude">Lat</label>
+                                <input class="form-control" id="latitude" max="90"
+                                       min="-90" required step="0.000000001" type="number">
+                            </div>
+                            <div class="col-12 py-2 text-center">
+                                <button class="btn btn-primary px-5" type="submit">Add</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="row bg-light px-3 py-3 m-5" id="reset_section">
+                <div class="col text-center">
+                    <button class="btn btn-danger m-3 px-3" id="reset_btn">Reset places</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-6" id="forecast_section">
+            <div class="text-center d-none" id="loading_img">
+                <div class="loading p-5 my-4">
+                    <div class="loader">
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__ball"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="text-center p-3" id="img_div">
+
+            </div>
+
+            <div class="text-center d-none" id="loading_json">
+                <div class="loading p-5">
+                    <div class="loader">
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__bar"></div>
+                        <div class="loader__ball"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3" id="json_div">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<%- include('includes/end.ejs') %>
