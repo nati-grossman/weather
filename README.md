@@ -1,7 +1,7 @@
 # weather
 weather - API
 
-Building a website that presents the weather forecast for the coming week.
+Building a website which shows the weather forecast for the coming week.
 
 
 - html
